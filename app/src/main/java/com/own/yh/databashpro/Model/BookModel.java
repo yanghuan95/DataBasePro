@@ -11,8 +11,8 @@ public class BookModel {
     private String book_name;
     private String book_author;
     private String book_public;
-    private Date book_public_date;
-    private Date book_reg_date;
+    private String book_public_date;
+    private String book_reg_date;
     private boolean isborrowed;
 
     public String getBook_id() {
@@ -47,19 +47,19 @@ public class BookModel {
         this.book_public = book_public;
     }
 
-    public Date getBook_public_date() {
+    public String getBook_public_date() {
         return book_public_date;
     }
 
-    public void setBook_public_date(Date book_public_date) {
+    public void setBook_public_date(String book_public_date) {
         this.book_public_date = book_public_date;
     }
 
-    public Date getBook_reg_date() {
+    public String getBook_reg_date() {
         return book_reg_date;
     }
 
-    public void setBook_reg_date(Date book_reg_date) {
+    public void setBook_reg_date(String book_reg_date) {
         this.book_reg_date = book_reg_date;
     }
 

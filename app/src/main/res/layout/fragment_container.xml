@@ -1,8 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/fragment_container"
     >
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:id="@+id/reader_relative_layout"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/query_reader_button"
+            android:text="@string/query_reader_string"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/add_reader_button"
+            android:text="@string/add_reader_string"
+            android:layout_below="@id/query_reader_button"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/delete_reader_string"
+            android:layout_below="@id/add_reader_button"
+            android:id="@+id/delete_reader_button"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/alter_reader_string"
+            android:id="@+id/alter_reader_button"
+            android:layout_below="@id/delete_reader_button"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:id="@+id/book_relative_layout"
+        android:layout_below="@id/reader_relative_layout"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/query_book_main_button"
+            android:text="@string/query_book_string"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_book_string"
+            android:id="@+id/add_book_main_button"
+            android:layout_below="@id/query_book_main_button" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/delete_book_string"
+            android:id="@+id/delet_book_main_button"
+            android:layout_below="@id/add_book_main_button"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/alter_book_string"
+            android:id="@+id/alter_book_main_button"
+            android:layout_below="@id/delet_book_main_button"/>
+    </RelativeLayout>
 
-</FrameLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentRight="true">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/get_book_id_text"
+                android:id="@+id/get_reader_id_text"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+            <EditText
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/get_book_id_edit_text"
+                android:layout_toRightOf="@id/get_reader_id_text"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/get_reader_id_text"
+                android:id="@+id/get_book_id_text"/>
+            <EditText
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/get_reader_id_edit_text"
+                android:layout_toRightOf="@id/get_book_id_text"/>
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

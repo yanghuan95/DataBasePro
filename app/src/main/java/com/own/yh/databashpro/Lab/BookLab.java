@@ -18,11 +18,9 @@ import java.util.List;
 
 public class BookLab {
     private SQLiteDatabase db;
-    private Context mContext;
 
     public BookLab(Context context) {
-        mContext = context.getApplicationContext();
-        db = new DbHelper(mContext)
+        db = new DbHelper(context)
                 .getWritableDatabase();
     }
 
@@ -90,8 +88,8 @@ public class BookLab {
         values.put(BookInfoTable.Cols.BOOK_AUTHOR, model.getBook_author());
         values.put(BookInfoTable.Cols.BOOK_NAME, model.getBook_name());
         values.put(BookInfoTable.Cols.BOOK_PUB, model.getBook_public());
-        values.put(BookInfoTable.Cols.BOOK_PUB_DATA, model.getBook_public_date().getTime());
-        values.put(BookInfoTable.Cols.BOOK_REG_DATE, model.getBook_reg_date().getTime());
+        values.put(BookInfoTable.Cols.BOOK_PUB_DATA, model.getBook_public_date());
+        values.put(BookInfoTable.Cols.BOOK_REG_DATE, model.getBook_reg_date());
         values.put(BookInfoTable.Cols.BOOK_IS_BORROWED, model.isborrowed() ? 1:0);
 
         return values;

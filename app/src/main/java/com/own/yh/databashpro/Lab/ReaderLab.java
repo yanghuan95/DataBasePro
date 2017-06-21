@@ -17,12 +17,10 @@ import java.util.List;
  */
 
 public class ReaderLab {
-    private Context mContext;
     private SQLiteDatabase db;
 
     public ReaderLab(Context context){
-        mContext = context.getApplicationContext();
-        db = new DbHelper(mContext)
+        db = new DbHelper(context)
                 .getWritableDatabase();
     }
 
@@ -36,20 +34,22 @@ public class ReaderLab {
         db.insert(ReaderTable.NAME, null, value);
     }
 
-    public void deleteReader(String id) {
-        db.delete(ReaderTable.NAME,
+    public boolean deleteReader(String id) {
+        int result = db.delete(ReaderTable.NAME,
                 ReaderTable.Cols.READER_ID + " = ?"
                 , new String[]{id});
+        return result >= 0;
     }
 
     //更新
-    public void alterReader(ReaderModel readerModel) {
+    public boolean alterReader(ReaderModel readerModel) {
         String id = readerModel.getReader_id();
         ContentValues values = getContentValues(readerModel);
 
-        db.update(ReaderTable.NAME, values
+        int result = db.update(ReaderTable.NAME, values
                 , ReaderTable.Cols.READER_ID + " = ?",
                 new String[]{id});
+        return result >= 0;
     }
 
     private ReaderCursorWrapper queryReader(String whereClause, String[] whereArgs) {

@@ -23,8 +23,8 @@ public class BookCursorWrapper extends CursorWrapper{
         String book_name = getString(getColumnIndex(BookInfoTable.Cols.BOOK_NAME));
         String book_author = getString(getColumnIndex(BookInfoTable.Cols.BOOK_AUTHOR));
         String book_public = getString(getColumnIndex(BookInfoTable.Cols.BOOK_PUB));
-        long book_public_date = getLong(getColumnIndex(BookInfoTable.Cols.BOOK_PUB_DATA));
-        long book_reg_date = getLong(getColumnIndex(BookInfoTable.Cols.BOOK_REG_DATE));
+        String book_public_date = getString(getColumnIndex(BookInfoTable.Cols.BOOK_PUB_DATA));
+        String book_reg_date = getString(getColumnIndex(BookInfoTable.Cols.BOOK_REG_DATE));
         int isborrowed = getInt(getColumnIndex(BookInfoTable.Cols.BOOK_IS_BORROWED));
 
         BookModel model = new BookModel();
@@ -32,8 +32,8 @@ public class BookCursorWrapper extends CursorWrapper{
         model.setBook_author(book_author);
         model.setBook_name(book_name);
         model.setBook_public(book_public);
-        model.setBook_public_date(new Date(book_public_date));
-        model.setBook_reg_date(new Date(book_reg_date));
+        model.setBook_public_date(book_public_date);
+        model.setBook_reg_date(book_reg_date);
         model.setIsborrowed(isborrowed == 1);
 
         return model;
