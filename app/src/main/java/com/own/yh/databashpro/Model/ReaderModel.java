@@ -10,7 +10,7 @@ public class ReaderModel {
     private String reader_id;
     private String reader_name;
     private String reader_sex;
-    private Date reader_reg_date;
+    private String reader_reg_date;
 
     public String getReader_id() {
         return reader_id;
@@ -37,11 +37,11 @@ public class ReaderModel {
     }
 
 
-    public Date getReader_reg_date() {
+    public String getReader_reg_date() {
         return reader_reg_date;
     }
 
-    public void setReader_reg_date(Date reader_reg_date) {
+    public void setReader_reg_date(String reader_reg_date) {
         this.reader_reg_date = reader_reg_date;
     }
 }

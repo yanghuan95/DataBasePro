@@ -26,6 +26,8 @@
             android:parentActivityName=".ShowMainActivity"/>
         <activity android:name=".Book.AddBookInfoActivity"
             android:parentActivityName=".ShowMainActivity"/>
+        <activity android:name=".BorrowBook.ShowBorrowInfoActivity"
+            android:parentActivityName=".ShowMainActivity"/>
     </application>
 
 </manifest>

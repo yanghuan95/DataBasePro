@@ -6,9 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import com.own.yh.databashpro.DataBase.DbSchema.BookInfoTable;
 import com.own.yh.databashpro.DataBase.DbSchema.BorrowRecordTable;
-import com.own.yh.databashpro.DataBase.DbSchema.ReaderFeeTable;
 import com.own.yh.databashpro.DataBase.DbSchema.ReaderTable;
-import com.own.yh.databashpro.DataBase.DbSchema.ReturnRecordTable;
 
 /**
  * Created by yh on 2017/6/18.
@@ -58,28 +56,6 @@ public class DbHelper extends SQLiteOpenHelper{
                         + "FOREIGN KEY (" + BorrowRecordTable.Cols.READER_ID + ") REFERENCES "
                                 + ReaderTable.NAME + " (" + ReaderTable.Cols.READER_ID + ") "
                         + "FOREIGN KEY (" + BorrowRecordTable.Cols.BOOK_ID + ") REFERENCES "
-                                + BookInfoTable.NAME + " (" + BookInfoTable.Cols.BOOK_ID + ")"
-                + ")"
-        );
-        db.execSQL("create table " + ReturnRecordTable.NAME
-                + "("
-                        + ReturnRecordTable.Cols.READER_ID + ", "
-                        + ReturnRecordTable.Cols.BOOK_ID + ", "
-                        + ReturnRecordTable.Cols.RETURN_DATE + " DATE, "
-                        + "FOREIGN KEY (" + ReturnRecordTable.Cols.READER_ID + ") REFERENCES "
-                                + ReaderTable.NAME + " (" + ReaderTable.Cols.READER_ID + ") "
-                        + "FOREIGN KEY (" + ReturnRecordTable.Cols.BOOK_ID + ") REFERENCES "
-                                + BookInfoTable.NAME + " (" + BookInfoTable.Cols.BOOK_ID + ")"
-                + ")"
-        );
-        db.execSQL("create table " + ReaderFeeTable.NAME
-                + "("
-                        + ReaderFeeTable.Cols.READER_ID + ", "
-                        + ReaderFeeTable.Cols.BOOK_ID + ", "
-                        + ReaderFeeTable.Cols.BOOK_FEE + " INTEGER NOT NULL, "
-                        + "FOREIGN KEY (" + ReturnRecordTable.Cols.READER_ID + ") REFERENCES "
-                                + ReaderTable.NAME + " (" + ReaderTable.Cols.READER_ID + ") "
-                        + "FOREIGN KEY (" + ReturnRecordTable.Cols.BOOK_ID + ") REFERENCES "
                                 + BookInfoTable.NAME + " (" + BookInfoTable.Cols.BOOK_ID + ")"
                 + ")"
         );

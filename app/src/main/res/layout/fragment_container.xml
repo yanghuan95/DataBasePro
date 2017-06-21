@@ -7,7 +7,10 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:id="@+id/reader_relative_layout"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -36,14 +39,17 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:id="@+id/book_relative_layout"
-        android:layout_below="@id/reader_relative_layout"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout"
+        android:layout_centerHorizontal="true">
         <Button
-            android:layout_alignParentLeft="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/query_book_main_button"
-            android:text="@string/query_book_string"/>
+            android:text="@string/query_book_string"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -65,40 +71,73 @@
     </RelativeLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_alignParentRight="true">
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/linearLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
         <RelativeLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/get_book_id_text"
+                android:text="@string/get_book_id_text_string"
                 android:id="@+id/get_reader_id_text"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true" />
             <EditText
-                android:layout_width="200dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/get_book_id_edit_text"
                 android:layout_toRightOf="@id/get_reader_id_text"/>
         </RelativeLayout>
         <RelativeLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/get_reader_id_text"
+                android:text="@string/get_reader_id_text_string"
                 android:id="@+id/get_book_id_text"/>
             <EditText
-                android:layout_width="200dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/get_reader_id_edit_text"
                 android:layout_toRightOf="@id/get_book_id_text"/>
         </RelativeLayout>
     </LinearLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:id="@+id/borrow_book_relative_layout"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/borrow_book_main_button"
+            android:text="@string/borrow_book_string"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/return_book_string"
+            android:id="@+id/return_book_main_button"
+            android:layout_below="@id/borrow_book_main_button" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/query_borrow_book_string"
+            android:id="@+id/query_borrow_book_main_button"
+            android:layout_below="@id/return_book_main_button"/>
+    </RelativeLayout>
 </RelativeLayout>

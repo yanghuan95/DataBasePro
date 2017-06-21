@@ -52,8 +52,7 @@ public class ShowReaderInfoActivity extends AppCompatActivity{
                 showID.setText(reader.getReader_id());
                 showName.setText(reader.getReader_name());
                 showReaderSex.setText(reader.getReader_sex());
-
-                showReaderRegDate.setText(reader.getReader_reg_date().toString());
+                showReaderRegDate.setText(reader.getReader_reg_date());
             }else{
                 Toast.makeText(ShowReaderInfoActivity.this, "can't query the reader"
                         , Toast.LENGTH_SHORT).show();

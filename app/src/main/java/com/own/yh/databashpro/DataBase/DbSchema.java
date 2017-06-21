@@ -45,27 +45,4 @@ public class DbSchema {
         }
 
     }
-
-    //归还记录
-    public static final class ReturnRecordTable {
-        public static final String NAME = "return_record_table";
-
-        public static final class Cols {
-            public static final String READER_ID = "reader_id";
-            public static final String BOOK_ID = "book_id";
-            public static final String RETURN_DATE = "borrowed_date";
-        }
-    }
-
-    //罚款记录
-    public static final class ReaderFeeTable {
-        public static final String NAME = "reader_fee_table";
-
-        public static final class Cols{
-            public static final String READER_ID = "reader_id";
-            public static final String BOOK_ID = "book_id";
-            public static final String BOOK_FEE = "book_fe";        //罚款金额
-        }
-    }
-
 }

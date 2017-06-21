@@ -28,10 +28,10 @@ public class ReaderLab {
      *常规的增删改查
      */
 
-    public void addReader(ReaderModel readerModel) {
+    public long addReader(ReaderModel readerModel) {
         ContentValues value = getContentValues(readerModel);
 
-        db.insert(ReaderTable.NAME, null, value);
+        return db.insert(ReaderTable.NAME, null, value);
     }
 
     public boolean deleteReader(String id) {
@@ -42,14 +42,13 @@ public class ReaderLab {
     }
 
     //更新
-    public boolean alterReader(ReaderModel readerModel) {
+    public int alterReader(ReaderModel readerModel) {
         String id = readerModel.getReader_id();
         ContentValues values = getContentValues(readerModel);
 
-        int result = db.update(ReaderTable.NAME, values
+        return db.update(ReaderTable.NAME, values
                 , ReaderTable.Cols.READER_ID + " = ?",
                 new String[]{id});
-        return result >= 0;
     }
 
     private ReaderCursorWrapper queryReader(String whereClause, String[] whereArgs) {
@@ -91,7 +90,7 @@ public class ReaderLab {
         values.put(ReaderTable.Cols.READER_ID, reader.getReader_id());
         values.put(ReaderTable.Cols.READER_NAME, reader.getReader_name());
         values.put(ReaderTable.Cols.READER_SEX, reader.getReader_sex());
-        values.put(ReaderTable.Cols.REG_DATE, reader.getReader_reg_date().getTime());
+        values.put(ReaderTable.Cols.REG_DATE, reader.getReader_reg_date());
 
         return values;
     }

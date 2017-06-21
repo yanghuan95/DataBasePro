@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical" android:layout_width="match_parent"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
               android:layout_height="match_parent">
-
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/add_book_id_text"
+            android:id="@+id/show_borrow_book_id_text"
             android:text="@string/show_book_id_string"/>
-        <EditText
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/add_book_id_view"
-            android:layout_toRightOf="@id/add_book_id_text"/>
+            android:id="@+id/show_borrow_book_id_view"
+            android:layout_toRightOf="@id/show_borrow_book_id_text"/>
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
@@ -24,13 +23,41 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/add_book_name_text"
+            android:id="@+id/show_borrow_reader_id_text"
+            android:text="@string/show_reader_id_string"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/show_borrow_reader_id_view"
+            android:layout_toRightOf="@id/show_borrow_reader_id_text"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/show_reader_borrow_name_text"
+            android:text="@string/show_reader_borrow_name_string"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/show_reader_borrow_name_view"
+            android:layout_toRightOf="@id/show_reader_borrow_name_text"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/show_book_borrow_name_text"
             android:text="@string/show_book_name_string"/>
-        <EditText
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/add_book_name_view"
-            android:layout_toRightOf="@id/add_book_name_text"/>
+            android:id="@+id/show_book_borrow_name_view"
+            android:layout_toRightOf="@id/show_book_borrow_name_text"/>
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
@@ -38,48 +65,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/add_book_author_text"
-            android:text="@string/show_book_author_string"/>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/add_book_author_view"
-            android:layout_toRightOf="@id/add_book_author_text"/>
-    </RelativeLayout>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+            android:id="@+id/show_borrow_time_text"
+            android:text="@string/show_borrow_time_string"/>
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/add_book_public_text"
-            android:text="@string/show_book_public_string"/>
-        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/add_book_public_view"
-            android:layout_toRightOf="@id/add_book_public_text"/>
+            android:id="@+id/show_borrow_time_view"
+            android:layout_toRightOf="@id/show_borrow_time_text"/>
     </RelativeLayout>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/add_book_public_date_text"
-            android:text="@string/show_book_public_date_string"/>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/add_book_public_date_view"
-            android:hint="@string/hint_date_format_string"
-            android:layout_toRightOf="@id/add_book_public_date_text"/>
-    </RelativeLayout>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/add_book_sub_button"
-        android:text="@string/submit_string"
-        android:layout_gravity="center"
-        />
 </LinearLayout>

@@ -27,27 +27,26 @@ public class BookLab {
     /*
      *常规的增删改查
      */
-    public void addBook(BookModel bookModel) {
+    public long addBook(BookModel bookModel) {
         ContentValues values = getContentValues(bookModel);
 
-        db.insert(BookInfoTable.NAME, null, values);
+        return db.insert(BookInfoTable.NAME, null, values);
     }
 
-    public void deleteBook(String id) {
-        db.delete(BookInfoTable.NAME,
+    public int deleteBook(String id) {
+        return db.delete(BookInfoTable.NAME,
                 BookInfoTable.Cols.BOOK_ID + " = ?"
                 , new String[]{id});
     }
 
-    public void alterBook(BookModel bookModel) {
+    public int alterBook(BookModel bookModel) {
         String id = bookModel.getBook_id();
 
         ContentValues values = getContentValues(bookModel);
 
-        db.update(BookInfoTable.NAME, values,
+        return db.update(BookInfoTable.NAME, values,
                 BookInfoTable.Cols.BOOK_ID + " = ?"
                 , new String[]{id});
-
     }
 
     private BookCursorWrapper queryBook(String whereClause, String[] whereArgs) {
@@ -67,7 +66,7 @@ public class BookLab {
 
     public BookModel getBook(String id) {
         BookCursorWrapper cursorWrapper = queryBook(
-                BookInfoTable.Cols.BOOK_NAME + " = ?",
+                BookInfoTable.Cols.BOOK_ID + " = ?",
                 new String[] {id}
         );
 
